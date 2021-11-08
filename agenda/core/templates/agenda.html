@@ -6,5 +6,12 @@
 </head>
 <body>
     <h2>Agendamentos</h2>
+
+    <ul>
+    {% for evento in eventos %}
+    <li><b>{{ evento.titulo }} - {{ evento.data_evento }}</b></li>
+
+    {% endfor %}
+    </ul>
 </body>
 </html>
