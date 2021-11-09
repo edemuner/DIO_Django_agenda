@@ -9,7 +9,7 @@
 
     <div align="center">
 
-    <form action="submit" method="POST">
+    <form action="submit" method="POST">{% csrf_token %}
     <label>Usuário</label>
     <input type="text" name="username">
     <label>Password</label>
