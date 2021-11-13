@@ -60,7 +60,7 @@ def submit_evento(request):
         data_evento = request.POST.get('data_evento')
         descricao = request.POST.get('descricao')
         usuario = request.user
-        id_evento = request.POST.get('id_evento')
+        id_evento = request.POST.get('id')
         if id_evento:
             evento = Evento.objects.get(id=id_evento)
             if evento.usuario == usuario:
