@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render
 from core.models import Evento
 from django.shortcuts import redirect
@@ -92,3 +93,10 @@ def delete_evento(request, id_evento):
     else:
         raise Http404()
     return redirect('/')
+
+
+@login_required(login_url='/login/')
+def json_lista_evento(request, id_usuario):
+    usuario = User.objects.get(id=id_usuario)
+    evento = Evento.objects.filter(usuario=usuario).values('id', 'titulo')
+    return JsonResponse(list(evento), safe=False)
