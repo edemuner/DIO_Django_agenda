@@ -9,6 +9,8 @@
     <ul style="font-size: 18px">
     {% for evento in eventos %}
     <li>
+        <!-- as cores variam caso o evento esteja próximo de acontecer ou já esteja no passado -->
+
         <div style={% if evento.get_evento_atrasado %}
                         "color:red"
                     {% endif %}>
